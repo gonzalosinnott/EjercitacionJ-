@@ -1,0 +1,97 @@
+﻿@model Envios.MVC.Models.CascadaModel
+@Scripts.Render("~/bundles/jquery")
+
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <h2>CARGAR ORDEN</h2>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div class="form-group" style="padding-top:50px">
+
+
+            <table class="table table-responsive table-sm">
+                <tbody>
+                    <tr>
+                        <td><label>PAIS</label></td>
+                        <td>
+                            @Html.DropDownListFor(m => m.PaisId, Model.Paises, "Please select", new { onchange = "document.forms[0].submit();" })
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>PROVINCIA</label></td>
+                        <td>
+                            @Html.DropDownListFor(m => m.ProvinciaId, Model.Provincias, "Please select", new { onchange = "document.forms[0].submit();", disabled = "disabled" })
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label>LOCALIDAD</label></td>
+                        <td>
+                            @Html.DropDownListFor(m => m.LocalidadId, Model.Localidades, "Please select", new { disabled = "disabled" })
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>CALLE</label></td>
+                        <td>@Html.TextBox("CalleName")</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <input type="submit" value="Submit" class="btn btn-default" />
+           
+
+            <br />
+            <br />
+            @Html.TextArea("txtInfo", string.Empty, 4, 55, null)
+
+        </div>
+    }
+
+    </body>
+</html>
+
+<script type="text/javascript">
+    $(function () {
+        if ($("#ProvinciaId option").length > 1) {
+            $("#ProvinciaId").removeAttr("disabled");
+        }
+
+        if ($("#LocalidadId option").length > 1) {
+            $("#LocalidadId").removeAttr("disabled");
+        }
+
+        $('.btn').click(function (e) {
+            e.preventDefault();
+
+            if ($("#PaisId").val() != "" && $("#ProvinciaId").val() != "" && $("#LocalidadId").val() != "" && $("#CalleName").val() != "") {
+                    
+                var selectedValue = "PAIS: " + $("#PaisId option:selected").text() + '\r\n' +
+                    "PROVINCIA: " + $("#ProvinciaId option:selected").text() + '\r\n' +
+                    "LOCALIDAD: " + $("#LocalidadId option:selected").text() + '\r\n' +
+                    "CALLE: " + $("#CalleName").val();
+                $('#txtInfo').val(selectedValue);
+            }
+            else {
+                alert("FALTAN COMPLETAR DATOS")
+            }
+        });        
+    });
+</script>

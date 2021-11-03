@@ -1,0 +1,12 @@
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\bin\Debug\Envios.Entitities.dll.config
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\bin\Debug\Envios.Entitities.dll
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\bin\Debug\Envios.Entitities.pdb
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\bin\Debug\EntityFramework.dll
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\bin\Debug\EntityFramework.SqlServer.dll
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\bin\Debug\EntityFramework.xml
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\bin\Debug\EntityFramework.SqlServer.xml
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\obj\Debug\Envios. Entitities.csproj.AssemblyReference.cache
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\obj\Debug\Envios. Entitities.csproj.CoreCompileInputs.cache
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\obj\Debug\Envios. Entitities.csproj.CopyComplete
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\obj\Debug\Envios.Entitities.dll
+D:\NEORIS\Capacitacion\Envios\Envios. Entitities\obj\Debug\Envios.Entitities.pdb
