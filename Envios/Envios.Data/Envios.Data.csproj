@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{07B68BC6-0534-4040-96AA-4542891BC5CD}</ProjectGuid>
+    <ProjectGuid>{F18785E6-D24C-4C98-B040-545DA631E1C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Envios.Data</RootNamespace>
@@ -61,9 +61,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Envios. Entitities\Envios. Entitities.csproj">
-      <Project>{053B5CAE-071F-4E5F-ABFA-882F60CC98A3}</Project>
-      <Name>Envios. Entitities</Name>
+    <ProjectReference Include="..\Envios.Entities\Envios.Entities.csproj">
+      <Project>{8282407F-B876-40B0-BD4C-0088FC4EA472}</Project>
+      <Name>Envios.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

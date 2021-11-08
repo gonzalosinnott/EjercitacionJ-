@@ -1,0 +1,29 @@
+﻿@model Envios.MVC.Models.ProvinciaModel
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("CreatePais", "ABM", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <h3 class="modal-title">AGREGAR NUEVO PAIS</h3>
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="modal-body">
+    
+        <label>PAIS</label>  
+        @Html.DropDownListFor(m => m.PaisId, Model.Paises, "Please select", new { @class = "form-control", onchange = "document.forms[0].submit();" })
+   
+        <label>PROVINCIA</label>
+        @Html.TextBoxFor(model => model.ProvinciaName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ProvinciaName)
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
+        <button type="submit" class="btn btn-primary">GUARDAR</button>
+    </div>
+}
+

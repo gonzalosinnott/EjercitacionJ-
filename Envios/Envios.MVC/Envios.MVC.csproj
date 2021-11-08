@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{78BBC003-0055-496C-8E90-4203202140A5}</ProjectGuid>
+    <ProjectGuid>{29603060-D28F-404C-8AD6-8BA9BB86581F}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44354</IISExpressSSLPort>
+    <IISExpressSSLPort>44332</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -127,11 +127,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ABMController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CascadaModel.cs" />
+    <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Models\LocalidadModel.cs" />
+    <Compile Include="Models\PaisModel.cs" />
+    <Compile Include="Models\ProvinciaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +144,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -168,6 +174,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ABM\_CreatePartialPais.cshtml" />
+    <Content Include="Views\ABM\_EditPartialPais.cshtml" />
+    <Content Include="Views\ABM\_CreatePartialProvincia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -186,16 +195,16 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Envios. Entitities\Envios. Entitities.csproj">
-      <Project>{053B5CAE-071F-4E5F-ABFA-882F60CC98A3}</Project>
-      <Name>Envios. Entitities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Envios.Data\Envios.Data.csproj">
-      <Project>{07B68BC6-0534-4040-96AA-4542891BC5CD}</Project>
+      <Project>{F18785E6-D24C-4C98-B040-545DA631E1C7}</Project>
       <Name>Envios.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Envios.Entities\Envios.Entities.csproj">
+      <Project>{8282407F-B876-40B0-BD4C-0088FC4EA472}</Project>
+      <Name>Envios.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Envios.Logic\Envios.Logic.csproj">
-      <Project>{D4E391FE-CE8F-4A70-92F7-F419D1FEE965}</Project>
+      <Project>{3C9E1B5E-52B6-43A7-8933-67250DF44AD2}</Project>
       <Name>Envios.Logic</Name>
     </ProjectReference>
   </ItemGroup>
@@ -215,9 +224,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53305</DevelopmentServerPort>
+          <DevelopmentServerPort>62479</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44354/</IISUrl>
+          <IISUrl>https://localhost:44332/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D4E391FE-CE8F-4A70-92F7-F419D1FEE965}</ProjectGuid>
+    <ProjectGuid>{3C9E1B5E-52B6-43A7-8933-67250DF44AD2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Envios.Logic</RootNamespace>
@@ -62,13 +62,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Envios. Entitities\Envios. Entitities.csproj">
-      <Project>{053B5CAE-071F-4E5F-ABFA-882F60CC98A3}</Project>
-      <Name>Envios. Entitities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Envios.Data\Envios.Data.csproj">
-      <Project>{07B68BC6-0534-4040-96AA-4542891BC5CD}</Project>
+      <Project>{F18785E6-D24C-4C98-B040-545DA631E1C7}</Project>
       <Name>Envios.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Envios.Entities\Envios.Entities.csproj">
+      <Project>{8282407F-B876-40B0-BD4C-0088FC4EA472}</Project>
+      <Name>Envios.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

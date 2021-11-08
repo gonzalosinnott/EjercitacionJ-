@@ -13,5 +13,42 @@ namespace Envios.Logic.Clases
         {
             return context.Provincias.ToList();
         }
+
+        public void Add(Provincias newProvincia)
+        {
+            context.Provincias.Add(newProvincia);
+            context.SaveChanges();
+        }
+
+        public void Update(Provincias provincia)
+        {
+            try
+            {
+                var provinciaUpdate = context.Provincias.Find(provincia.ProvinciaID);
+                provinciaUpdate.ProvinciaName = provincia.ProvinciaName;
+
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                //throw new CustomException("INGRESO DE DATOS ERRONEOS");
+            }
+        }
+
+        public void Delete(int id)
+        {
+            try
+            {
+                var provinciaToDelete = context.Provincias.Find(id);
+
+                ///BORRADO LOGICO
+                provinciaToDelete.Available = 0;
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                ///throw new CustomException("EXISTEN ORDENES ASOCIADAS A ESTE DISTRIBUIDOR. NO SE PUEDE ELIMINAR");
+            }
+        }
     }
 }

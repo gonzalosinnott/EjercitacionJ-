@@ -1,7 +1,8 @@
-﻿@model Envios.MVC.Models.CascadaModel
-@Scripts.Render("~/bundles/jquery")
+﻿@{
+    ViewBag.Title = "Home Page";
+}
 
-
+@model Envios.MVC.Models.CascadaModel
 
 @{
     Layout = null;
@@ -12,60 +13,104 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="@Url.Content("~/Content/style.css")">
+
     <title>Index</title>
 </head>
 <body>
-
-    <h2>CARGAR ORDEN</h2>
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
-    {
-        <div class="form-group" style="padding-top:50px">
-
+    <div class="form-group" style="padding:50px">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
 
             <table class="table table-responsive table-sm">
                 <tbody>
                     <tr>
+                        <td colspan="5"><h2>CARGAR ORDEN</h2></td>
+                    </tr>
+                    <tr>
                         <td><label>PAIS</label></td>
                         <td>
-                            @Html.DropDownListFor(m => m.PaisId, Model.Paises, "Please select", new { onchange = "document.forms[0].submit();" })
+                            @Html.DropDownListFor(m => m.PaisId, Model.Paises, "Please select", new { @class = "form-control", onchange = "document.forms[0].submit();" })
                         </td>
-                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-url="@Url.Action("CreatePais","ABM")" id="btnCreatePais">
+                                CREAR PAIS
+                            </button>
+                        </td>
+                        <td>@Html.ActionLink("ELIMINAR PAIS", "DeletePais", "ABM", new { id = Html.ValueFor(m => m.PaisId) }, new { @class = "btn btn-danger", onclick = "return confirm('¿DESEA ELIMINAR ESTE PAIS?')" })</td>
+                        <td>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-url="@Url.Action("EditPais","ABM")" id="btnEditPais">
+                                EDITAR PAIS
+                            </button>
+                        </td>
                     </tr>
 
                     <tr>
                         <td><label>PROVINCIA</label></td>
                         <td>
-                            @Html.DropDownListFor(m => m.ProvinciaId, Model.Provincias, "Please select", new { onchange = "document.forms[0].submit();", disabled = "disabled" })
+                            @Html.DropDownListFor(m => m.ProvinciaId, Model.Provincias, "Please select", new { @class = "form-control", onchange = "document.forms[0].submit();", disabled = "disabled" })
                         </td>
-                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-url="@Url.Action("CreateProvincia","ABM")" id="btnCreateProvincia">
+                                CREAR PAIS
+                            </button>
+                        </td>
+                        <td>@Html.ActionLink("ELIMINAR PROVINCIA", "DeleteProvincia", "ABM", new { id = Html.ValueFor(m => m.ProvinciaId) }, new { @class = "btn btn-danger", onclick = "return confirm('¿DESEA ELIMINAR ESTA PROVINCIA?')" })</td>
+                        <td><input type="button" value="MODIFICAR PROVINCIA" class="btn btn-warning" /></td>
                     </tr>
                     <tr>
                         <td><label>LOCALIDAD</label></td>
                         <td>
-                            @Html.DropDownListFor(m => m.LocalidadId, Model.Localidades, "Please select", new { disabled = "disabled" })
+                            @Html.DropDownListFor(m => m.LocalidadId, Model.Localidades, "Please select", new { @class = "form-control", disabled = "disabled" })
                         </td>
-                        <td></td>
+                        <td><input type="button" value="NUEVA LOCALIDAD" class="btn btn-success" /></td>
+                        <td>@Html.ActionLink("ELIMINAR LOCALIDAD", "DeleteLocalidad", "ABM", new { id = Html.ValueFor(m => m.LocalidadId) }, new { @class = "btn btn-danger", onclick = "return confirm('¿DESEA ELIMINAR ESTA LOCALIDAD?')" })</td>
+                        <td><input type="button" value="MODIFICAR LOCALIDAD" class="btn btn-warning" /></td>
                     </tr>
 
                     <tr>
                         <td><label>CALLE</label></td>
-                        <td>@Html.TextBox("CalleName")</td>
-                        <td></td>
+                        <td colspan="4">@Html.TextBox("CalleName")</td>
                     </tr>
                 </tbody>
             </table>
 
-            <input type="submit" value="Submit" class="btn btn-default" />
-           
+            <input type="submit" value="CARGAR DIRECCION" class="btn btn-info" id="submitbtn" />
+            <input type="reset" value="BORRAR" class="btn btn-secondary" id="resetbtn" />
+
 
             <br />
             <br />
-            @Html.TextArea("txtInfo", string.Empty, 4, 55, null)
+            @Html.TextArea("txtInfo", string.Empty, 4, 55, new { @class = "form-control", @readonly = true })
 
+            <br />
+            <br />
+
+        }
+    </div>
+
+
+    <div id="modal-add" class=" modal fade in">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id='modal-add-content'></div>
+            </div>
         </div>
-    }
+    </div>
 
-    </body>
+    <div id="modal-edit" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id='modal-edit-content'></div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
 </html>
 
 <script type="text/javascript">
@@ -78,20 +123,79 @@
             $("#LocalidadId").removeAttr("disabled");
         }
 
-        $('.btn').click(function (e) {
-            e.preventDefault();
-
-            if ($("#PaisId").val() != "" && $("#ProvinciaId").val() != "" && $("#LocalidadId").val() != "" && $("#CalleName").val() != "") {
-                    
-                var selectedValue = "PAIS: " + $("#PaisId option:selected").text() + '\r\n' +
-                    "PROVINCIA: " + $("#ProvinciaId option:selected").text() + '\r\n' +
-                    "LOCALIDAD: " + $("#LocalidadId option:selected").text() + '\r\n' +
-                    "CALLE: " + $("#CalleName").val();
-                $('#txtInfo').val(selectedValue);
-            }
-            else {
-                alert("FALTAN COMPLETAR DATOS")
-            }
-        });        
+        if ($("#ProvinciaId option").length == 1) {
+            $("#LocalidadId").attr("disabled", "disabled");
+        }
     });
+
+    $('#submitbtn').click(function (e) {
+        e.preventDefault();
+        if ($("#PaisId").val() != "" && $("#ProvinciaId").val() != "" && $("#LocalidadId").val() != "" && $("#CalleName").val() != "") {
+
+            var selectedValue = "PAIS: " + $("#PaisId option:selected").text() + '\r\n' +
+                "PROVINCIA: " + $("#ProvinciaId option:selected").text() + '\r\n' +
+                "LOCALIDAD: " + $("#LocalidadId option:selected").text() + '\r\n' +
+                "CALLE: " + $("#CalleName").val();
+            $('#txtInfo').val(selectedValue);
+        }
+        else {
+            alert("FALTAN COMPLETAR DATOS")
+        }
+    });
+
+    $("#btnCreatePais").on("click", function () {
+
+        $.ajax(
+            {
+                type: 'GET',
+                url: '/ABM/CreatePais',
+                contentType: 'application/json; charset=utf=8',
+                success: function (result) {
+                    $('#modal-add-content').html(result);
+                    $('#modal-add').modal('show');
+                },
+                error: function (er) {
+                    alert(er);
+                }
+            });
+
+    });
+
+    $("#btnCreateProvincia").on("click", function () {
+
+        $.ajax(
+            {
+                type: 'GET',
+                url: '/ABM/CreateProvincia',
+                contentType: 'application/json; charset=utf=8',
+                success: function (result) {
+                    $('#modal-add-content').html(result);
+                    $('#modal-add').modal('show');
+                },
+                error: function (er) {
+                    alert(er);
+                }
+            });
+
+    });
+
+    $("#btnEditPais").on("click", function () {
+
+
+        var data = $("#PaisId").val()
+        $.ajax(
+            {
+                type: 'GET',
+                url: '/ABM/EditPais',
+                contentType: 'application/json; charset=utf=8',
+                data: data,
+                success: function (result) {
+                    $('#modal-edit-content').html(result);
+                    $('#modal-edit').modal('show');
+                },
+                error: function (er) {
+                    alert(er);
+                }
+            });
+});
 </script>

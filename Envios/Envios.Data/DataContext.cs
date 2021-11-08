@@ -1,16 +1,15 @@
+using Envios.Entities;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
-using Envios.Entities;
-
 
 namespace Envios.Data
 {
     public partial class DataContext : DbContext
     {
         public DataContext()
-            : base("name=DataConnection")
+            : base("name=Connection")
         {
         }
 
