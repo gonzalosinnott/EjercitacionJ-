@@ -9,17 +9,17 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{29603060-D28F-404C-8AD6-8BA9BB86581F}</ProjectGuid>
+    <ProjectGuid>{43B85908-C53A-4154-B94F-1005A445E762}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Envios.MVC</RootNamespace>
-    <AssemblyName>Envios.MVC</AssemblyName>
+    <RootNamespace>Vista.MVC</RootNamespace>
+    <AssemblyName>Vista.MVC</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44332</IISExpressSSLPort>
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -127,13 +127,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ABMController.cs" />
+    <Compile Include="Controllers\ABMDireccionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CascadaModel.cs" />
-    <Compile Include="Models\DataModel.cs" />
     <Compile Include="Models\LocalidadModel.cs" />
     <Compile Include="Models\PaisModel.cs" />
     <Compile Include="Models\ProvinciaModel.cs" />
@@ -144,7 +143,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -173,10 +171,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\ABM\_CreatePartialPais.cshtml" />
-    <Content Include="Views\ABM\_EditPartialPais.cshtml" />
-    <Content Include="Views\ABM\_CreatePartialProvincia.cshtml" />
+    <Content Include="Views\ABMDirecciones\_CreateLocalidadPartial.cshtml" />
+    <Content Include="Views\ABMDirecciones\_CreatePaisPartial.cshtml" />
+    <Content Include="Views\ABMDirecciones\_CreateProvinciaPartial.cshtml" />
+    <Content Include="Views\ABMDirecciones\_EditPaisPartial.cshtml" />
+    <Content Include="Views\ABMDirecciones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -196,15 +198,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Envios.Data\Envios.Data.csproj">
-      <Project>{F18785E6-D24C-4C98-B040-545DA631E1C7}</Project>
+      <Project>{f18785e6-d24c-4c98-b040-545da631e1c7}</Project>
       <Name>Envios.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Envios.Entities\Envios.Entities.csproj">
-      <Project>{8282407F-B876-40B0-BD4C-0088FC4EA472}</Project>
+      <Project>{8282407f-b876-40b0-bd4c-0088fc4ea472}</Project>
       <Name>Envios.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Envios.Logic\Envios.Logic.csproj">
-      <Project>{3C9E1B5E-52B6-43A7-8933-67250DF44AD2}</Project>
+      <Project>{3c9e1b5e-52b6-43a7-8933-67250df44ad2}</Project>
       <Name>Envios.Logic</Name>
     </ProjectReference>
   </ItemGroup>
@@ -224,9 +226,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62479</DevelopmentServerPort>
+          <DevelopmentServerPort>53661</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44332/</IISUrl>
+          <IISUrl>https://localhost:44397/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

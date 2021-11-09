@@ -9,13 +9,15 @@ namespace Envios.MVC.Models
     public class LocalidadModel
     {
         [Key]
-        public int LocalidadID { get; set; }
+        public int LocalidadId { get; set; }
 
         [Required]
         [StringLength(50)]
         public string LocalidadName { get; set; }
 
-        public int ProvinciaID { get; set; }
+        public int ProvinciaId { get; set; }
+
+        public int PaisId { get; set; }
 
         public int Available { get; set; }
     }

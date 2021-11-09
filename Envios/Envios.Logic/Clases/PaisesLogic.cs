@@ -1,4 +1,5 @@
-﻿using Envios.Entities;
+﻿using Envios.Data;
+using Envios.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,9 +54,7 @@ namespace Envios.Logic.Clases
 
         public Paises getPaisById(int id)
         {
-            Paises pais = new Paises();
-
-            pais = context.Paises.Where(p => p.PaisID == id).FirstOrDefault();
+            Paises pais = context.Paises.Where(p => p.PaisID == id).FirstOrDefault();                      
 
             return pais;
         }

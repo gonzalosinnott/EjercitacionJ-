@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Envios.Data", "Envios.Data\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Envios.Logic", "Envios.Logic\Envios.Logic.csproj", "{3C9E1B5E-52B6-43A7-8933-67250DF44AD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Envios.MVC", "Envios.MVC\Envios.MVC.csproj", "{29603060-D28F-404C-8AD6-8BA9BB86581F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Envios.MVC", "Envios.MVC\Envios.MVC.csproj", "{43B85908-C53A-4154-B94F-1005A445E762}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{3C9E1B5E-52B6-43A7-8933-67250DF44AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C9E1B5E-52B6-43A7-8933-67250DF44AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C9E1B5E-52B6-43A7-8933-67250DF44AD2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29603060-D28F-404C-8AD6-8BA9BB86581F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29603060-D28F-404C-8AD6-8BA9BB86581F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29603060-D28F-404C-8AD6-8BA9BB86581F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29603060-D28F-404C-8AD6-8BA9BB86581F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B85908-C53A-4154-B94F-1005A445E762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B85908-C53A-4154-B94F-1005A445E762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B85908-C53A-4154-B94F-1005A445E762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B85908-C53A-4154-B94F-1005A445E762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

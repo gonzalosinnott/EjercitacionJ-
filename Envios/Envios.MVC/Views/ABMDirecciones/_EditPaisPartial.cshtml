@@ -1,0 +1,37 @@
+﻿@model Envios.MVC.Models.PaisModel
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Edit group member</h3>
+</div>
+<div>
+    @using (Ajax.BeginForm("EditPais", "ABMDirecciones", FormMethod.Post,
+                        new AjaxOptions
+                        {
+                            InsertionMode = InsertionMode.Replace,
+                            HttpMethod = "POST",
+                            UpdateTargetId = "list-of-people"
+                        }))
+    {
+        @Html.ValidationSummary()
+        @Html.AntiForgeryToken()
+        <div class="modal-body">
+            <label>PAIS</label>
+            @Html.TextBoxFor(model => model.PaisName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PaisName)
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
+            <button type="submit" class="btn btn-primary">GUARDAR</button>
+        </div>
+    }
+</div>
+

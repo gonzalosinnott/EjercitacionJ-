@@ -9,7 +9,7 @@ namespace Envios.MVC.Models
     public class PaisModel
     {
         [Key]
-        int PaisId { get; set; }
+        public int PaisId { get; set; }
 
         [Required]
         [StringLength(50)]

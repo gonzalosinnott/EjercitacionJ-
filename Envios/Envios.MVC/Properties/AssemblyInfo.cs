@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Envios.MVC")]
+[assembly: AssemblyTitle("Vista.MVC")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Envios.MVC")]
+[assembly: AssemblyProduct("Vista.MVC")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b761c3e9-3991-4c1e-a20a-8201548d9f1a")]
+[assembly: Guid("55aa0e06-145b-4441-978d-1d0242274ffc")]
 
 // Version information for an assembly consists of the following four values:
 //
