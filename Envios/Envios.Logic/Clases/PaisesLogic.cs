@@ -58,5 +58,12 @@ namespace Envios.Logic.Clases
 
             return pais;
         }
+
+        public Paises GetDataById(int id)
+        {
+            Paises pais = context.Paises.Where(p => p.PaisID == id).FirstOrDefault();
+
+            return pais;
+        }
     }
 }

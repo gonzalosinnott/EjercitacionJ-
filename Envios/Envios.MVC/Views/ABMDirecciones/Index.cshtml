@@ -1,13 +1,12 @@
 ﻿@model Envios.MVC.Models.CascadaModel
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+@Scripts.Render("~/Scripts/ABMDireccionesScript.js")
 
 @{
     ViewBag.Title = "Home Page";
 }
-
-
-
 <!DOCTYPE html>
+
 
 <html>
 <head>
@@ -27,15 +26,16 @@
                         <td>
                             @if (ViewBag.ListaPaises != null)
                             {
-                                @Html.DropDownListFor(Model => Model.PaisId, new SelectList(ViewBag.ListaPaises as System.Collections.IEnumerable, "PaisId", "PaisName"), "ELIJA UN PAIS", new { @class = "form-control", id = "Pais" })
-                            }
+                                @Html.DropDownListFor(Model => Model.PaisId, new SelectList(ViewBag.ListaPaises as System.Collections.IEnumerable, "PaisId", "PaisName"), "ELIJA UN PAIS", new { @class = "form-control", id = "Pais" })}
                         </td>
                         <td>
                             <button type="button" class="btn btn-success" data-toggle="modal" data-url="@Url.Action("CreatePais","ABMDirecciones")" id="btnCreatePais">
                                 CREAR PAIS
                             </button>
                         <td>
-                            <button class="btn btn-warning modal-edit" id="btnEditPais">EDITAR PAIS</button>
+                            <button type="button" class="btn btn-danger" data-url="@Url.Action("EditPais","ABMDirecciones")" id="btnEditPais">
+                                EDITAR PAIS
+                            </button>
                         </td>
                         <td>
                             <button type="button" class="btn btn-danger" data-url="@Url.Action("DeletePais","ABMDirecciones")" id="btnDeletePais">
@@ -55,7 +55,9 @@
                             </button>
                         </td>
                         <td>
-                            MODIFICAR
+                            <button type="button" class="btn btn-danger" data-url="@Url.Action("EditProvincia","ABMDirecciones")" id="btnEditProvincia">
+                                EDITAR PROVINCIA
+                            </button>
                         </td>
                         <td>
 
@@ -74,7 +76,9 @@
                                 CREAR LOCALIDAD
                             </button>
                         <td>
-                            MODIFICAR
+                            <button type="button" class="btn btn-danger" data-url="@Url.Action("EditLocalidad","ABMDirecciones")" id="btnEditLocalidad">
+                                EDITAR LOCALIDAD
+                            </button>
                         </td>
                         <td>
                             <button type="button" class="btn btn-danger" data-url="@Url.Action("DeleteLocalidad","ABMDirecciones")" id="btnDeleteLocalidad">
@@ -112,218 +116,12 @@
         </div>
     </div>
 
-    <div class="modal hide fade in" id="modal-edit">
-        <div id="modal-edit-container"></div>
+    <div id="modal-edit" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id='modal-edit-content'></div>
+            </div>
+        </div>
     </div>
-
-
 </body>
 </html>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-     
-
-  
-    $("#Pais").change(function () {
-        var PaisId = $(this).val();
-        $.getJSON("/ABMDirecciones/LoadProvincias/", { PaisId },
-            function (classesData) {
-                var select = $("#Provincia");
-                select.empty();
-                select.append($('<option/>', {
-                    value: 0,
-                    text: "ELIJA UNA PROVINCIA"
-                }));
-                $.each(classesData, function (index, itemData) {
-                    select.append($('<option/>', {
-                        value: itemData.Value,
-                        text: itemData.Text
-                    }));
-                });
-            });
-    });
-
-    $("#Provincia").change(function () {
-        var ProvinciaId = $(this).val();
-        $.getJSON("/ABMDirecciones/LoadLocalidades/", { ProvinciaId },
-            function (classesData) {
-                var select = $("#Localidad");
-                select.empty();
-                select.append($('<option/>', {
-                    value: 0,
-                    text: "ELIJA UNA LOCALIDAD"
-                }));
-                $.each(classesData, function (index, itemData) {
-                    select.append($('<option/>', {
-                        value: itemData.Value,
-                        text: itemData.Text
-                    }));
-                });
-            });
-    });
-
-    $('#submitbtn').click(function (e) {
-        e.preventDefault();
-        if ($("#Pais").val() != "" && $("#Provincia").val() != "" && $("#Localidad").val() != "" && $("#CalleName").val() != "") {
-
-            var selectedValue = "PAIS: " + $("#Pais option:selected").text() + '\r\n' +
-                "PROVINCIA: " + $("#Provincia option:selected").text() + '\r\n' +
-                "LOCALIDAD: " + $("#Localidad option:selected").text() + '\r\n' +
-                "CALLE: " + $("#CalleName").val();
-            $('#txtInfo').val(selectedValue);
-        }
-        else {
-            alert("FALTAN COMPLETAR DATOS")
-        }
-    });
-
-    $("#btnCreatePais").on("click", function () {
-
-        $.ajax(
-            {
-                type: 'GET',
-                url: '/ABMDirecciones/CreatePais',
-                contentType: 'application/json; charset=utf=8',
-                success: function (result) {
-                    $('#modal-add-content').html(result);
-                    $('#modal-add').modal('show');
-                },
-                error: function (er) {
-                    alert(er);
-                }
-            });
-    });
-
-    $("#btnCreateProvincia").on("click", function () {
-
-        $.ajax(
-            {
-                type: 'GET',
-                url: '/ABMDirecciones/CreateProvincia',
-                contentType: 'application/json; charset=utf=8',
-                success: function (result) {
-                    $('#modal-add-content').html(result);
-                    $('#modal-add').modal('show');
-                },
-                error: function (er) {
-                    alert(er);
-                }
-            });
-
-    });
-
-    $("#btnCreateLocalidad").on("click", function () {
-
-        $.ajax(
-            {
-                type: 'GET',
-                url: '/ABMDirecciones/CreateLocalidad',
-                contentType: 'application/json; charset=utf=8',
-                success: function (result) {
-                    $('#modal-add-content').html(result);
-                    $('#modal-add').modal('show');
-                },
-                error: function (er) {
-                    alert(er);
-                }
-            });
-
-    });
-
-    $("#btnDeletePais").on("click", function () {
-        var data = $("#Pais").val()
-        if (data == 0) {
-            alert("SELECCIONE UN PAIS A ELIMINAR");
-        }
-        else {
-            confirm('¿DESEA ELIMINAR ESTE PAIS?')
-            {
-                $.ajax(
-                    {
-                        type: 'GET',
-                        url: '/ABMDirecciones/DeletePais?id=' + data,
-                        contentType: 'application/json; charset=utf=8',
-                        success: function (result) {
-                            alert("REGISTRO ELIMINADO CON EXITO");
-                            location.reload();
-                        },
-                        error: function (er) {
-                            alert("LA TAREA FALLO CON EXITO");
-                            location.reload();
-                        }
-                    });
-            }
-        }
-                
-    });
-
-    $("#btnDeleteProvincia").on("click", function () {
-        var data = $("#Provincia").val()
-        if (data == 0) {
-            alert("SELECCIONE UNA PROVINCIA A ELIMINAR");
-        }
-        else {
-            confirm('¿DESEA ELIMINAR ESTA PROVINCIA?')
-            {
-                $.ajax(
-                    {
-                        type: 'GET',
-                        url: '/ABMDirecciones/DeleteProvincia?id=' + data,
-                        contentType: 'application/json; charset=utf=8',
-                        success: function (result) {
-                            alert("REGISTRO ELIMINADO CON EXITO");
-                            location.reload();
-                        },
-                        error: function (er) {
-                            alert("LA TAREA FALLO CON EXITO");
-                            location.reload();
-                        }
-                    });
-            }
-        }
-    });
-
-    $("#btnDeleteLocalidad").on("click", function () {
-        var data = $("#Localidad").val()
-        if (data == 0) {
-            alert("SELECCIONE UNA LOCALIDAD A ELIMINAR");
-        }
-        else {
-            confirm('¿DESEA ELIMINAR ESTA PROVINCIA?')
-            {
-                $.ajax(
-                    {
-                        type: 'GET',
-                        url: '/ABMDirecciones/DeleteLocalidad?id=' + data,
-                        contentType: 'application/json; charset=utf=8',
-                        success: function (result) {
-                            alert("REGISTRO ELIMINADO CON EXITO");
-                            location.reload();
-                        },
-                        error: function (er) {
-                            alert("LA TAREA FALLO CON EXITO");
-                            location.reload();
-                        }
-                    });
-            }
-        }
-    });
-
-    $("#btnEditPais").on("click", function () {
-
-        var dataId = $("#Pais").val()
-        if (dataId == 0) {
-            alert("SELECCIONE UN PAIS A ELIMINAR");
-        }
-        else {            
-            var url = "/ABMDirecciones/EditPais"; 
-            var id = dataId 
-            $.get(url + '/' + id, function (data) {
-                $('#modal-edit-container').html(data);
-                $('#modal-edit').modal('show');
-            });           
-        }
-    });
-
-</script>

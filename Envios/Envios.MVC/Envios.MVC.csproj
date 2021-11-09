@@ -147,6 +147,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ABMDireccionesScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -179,6 +180,8 @@
     <Content Include="Views\ABMDirecciones\_CreateProvinciaPartial.cshtml" />
     <Content Include="Views\ABMDirecciones\_EditPaisPartial.cshtml" />
     <Content Include="Views\ABMDirecciones\Index.cshtml" />
+    <Content Include="Views\ABMDirecciones\_EditProvinciaPartial.cshtml" />
+    <Content Include="Views\ABMDirecciones\_EditLocalidadPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

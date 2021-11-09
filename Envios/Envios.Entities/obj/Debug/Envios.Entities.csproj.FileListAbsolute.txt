@@ -21,3 +21,15 @@ C:\Users\gonzalosinnott\Desktop\Envios\Envios.Entities\obj\Debug\Envios.Entities
 C:\Users\gonzalosinnott\Desktop\Envios\Envios.Entities\obj\Debug\Envios.Entities.csproj.CopyComplete
 C:\Users\gonzalosinnott\Desktop\Envios\Envios.Entities\obj\Debug\Envios.Entities.dll
 C:\Users\gonzalosinnott\Desktop\Envios\Envios.Entities\obj\Debug\Envios.Entities.pdb
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\bin\Debug\Envios.Entities.dll.config
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\bin\Debug\Envios.Entities.dll
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\bin\Debug\Envios.Entities.pdb
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\bin\Debug\EntityFramework.dll
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\bin\Debug\EntityFramework.xml
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\obj\Debug\Envios.Entities.csproj.AssemblyReference.cache
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\obj\Debug\Envios.Entities.csproj.CoreCompileInputs.cache
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\obj\Debug\Envios.Entities.csproj.CopyComplete
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\obj\Debug\Envios.Entities.dll
+C:\Users\gonzalosinnott\Desktop\Ej\EjercitacionJ--main\Envios\Envios.Entities\obj\Debug\Envios.Entities.pdb

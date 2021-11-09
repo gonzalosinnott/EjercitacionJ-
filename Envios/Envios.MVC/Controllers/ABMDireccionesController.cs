@@ -169,27 +169,49 @@ namespace Envios.MVC.Controllers
         [HttpGet]
         public PartialViewResult EditPais(int id)
         {
-            var paisModel = new PaisModel();
 
-            paisModel.PaisId = id;
+            var model = paisesLogic.GetDataById(id);
 
-            return PartialView("_EditPaisPartial", paisModel);
+            return PartialView("_EditPaisPartial", model);
         }
 
         [HttpPost]
-        public ActionResult EditPais(PaisModel model)
+        public ActionResult EditPais(Paises model)
+        {
+            paisesLogic.Update(model);
+            return RedirectToAction("Index", "ABMDirecciones");
+        }
+
+        [HttpGet]
+        public PartialViewResult EditProvincia(int id)
         {
 
-            if (ModelState.IsValid)
-            {
-                var toUpdate = context.Paises.Find(model.PaisId);
-                paisesLogic.Update(toUpdate);
-                return RedirectToAction("Index", "ABMDirecciones");
-            }
-            else
-            {
-                return View("Error");
-            }
+            var model = provinciasLogic.GetDataById(id);
+
+            return PartialView("_EditProvinciaPartial", model);
+        }
+
+        [HttpPost]
+        public ActionResult EditProvincia(Provincias model)
+        {
+            provinciasLogic.Update(model);
+            return RedirectToAction("Index", "ABMDirecciones");
+        }
+
+        [HttpGet]
+        public PartialViewResult EditLocalidad(int id)
+        {
+
+            var model = localidadesLogic.GetDataById(id);
+
+            return PartialView("_EditLocalidadPartial", model);
+        }
+
+        [HttpPost]
+        public ActionResult EditLocalidad(Localidades model)
+        {
+            localidadesLogic.Update(model);
+            return RedirectToAction("Index", "ABMDirecciones");
         }
     }
 }

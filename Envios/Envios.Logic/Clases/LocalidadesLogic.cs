@@ -48,5 +48,12 @@ namespace Envios.Logic.Clases
                 ///throw new CustomException("EXISTEN ORDENES ASOCIADAS A ESTE DISTRIBUIDOR. NO SE PUEDE ELIMINAR");
             }
         }
+
+        public Localidades GetDataById(int id)
+        {
+            Localidades localidad = context.Localidades.Where(p => p.LocalidadID == id).FirstOrDefault();
+
+            return localidad;
+        }
     }
 }

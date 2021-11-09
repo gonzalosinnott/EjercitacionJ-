@@ -50,5 +50,12 @@ namespace Envios.Logic.Clases
                 ///throw new CustomException("EXISTEN ORDENES ASOCIADAS A ESTE DISTRIBUIDOR. NO SE PUEDE ELIMINAR");
             }
         }
+
+        public Provincias GetDataById(int id)
+        {
+            Provincias provincia = context.Provincias.Where(p => p.ProvinciaID == id).FirstOrDefault();
+
+            return provincia;
+        }
     }
 }
