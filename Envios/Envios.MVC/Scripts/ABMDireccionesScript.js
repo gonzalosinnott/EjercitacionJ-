@@ -110,20 +110,21 @@ $("#btnDeletePais").on("click", function () {
         alert("SELECCIONE UN PAIS A ELIMINAR");
     }
     else {
-        confirm('¿DESEA ELIMINAR ESTE PAIS?')
+        if(confirm('¿DESEA ELIMINAR ESTE PAIS?')==true)
         {
             $.ajax(
                 {
                     type: 'GET',
                     url: '/ABMDirecciones/DeletePais?id=' + data,
                     contentType: 'application/json; charset=utf=8',
-                    success: function (result) {
-                        alert("REGISTRO ELIMINADO CON EXITO");
-                        location.reload();
+                    success: function (response) {
+                        if (response.result == "SUCCESS") {
+                            alert("REGISTRO BORRADO");
+                            location.reload();
+                        }
                     },
                     error: function (er) {
-                        alert("LA TAREA FALLO CON EXITO");
-                        location.reload();
+                        alert("ERROR AL QUERER BORRAR EL REGISTRO");
                     }
                 });
         }
@@ -137,20 +138,21 @@ $("#btnDeleteProvincia").on("click", function () {
         alert("SELECCIONE UNA PROVINCIA A ELIMINAR");
     }
     else {
-        confirm('¿DESEA ELIMINAR ESTA PROVINCIA?')
+        if (confirm('¿DESEA ELIMINAR ESTA PROVINCIA?') == true)
         {
             $.ajax(
                 {
                     type: 'GET',
                     url: '/ABMDirecciones/DeleteProvincia?id=' + data,
                     contentType: 'application/json; charset=utf=8',
-                    success: function (result) {
-                        alert("REGISTRO ELIMINADO CON EXITO");
-                        location.reload();
+                    success: function (response) {
+                        if (response.result == "SUCCESS") {
+                            alert("REGISTRO BORRADO");
+                            location.reload();
+                        }
                     },
                     error: function (er) {
-                        alert("LA TAREA FALLO CON EXITO");
-                        location.reload();
+                        alert("ERROR AL QUERER BORRAR EL REGISTRO");
                     }
                 });
         }
@@ -163,20 +165,21 @@ $("#btnDeleteLocalidad").on("click", function () {
         alert("SELECCIONE UNA LOCALIDAD A ELIMINAR");
     }
     else {
-        confirm('¿DESEA ELIMINAR ESTA PROVINCIA?')
+        if (confirm('¿DESEA ELIMINAR ESTA LOCALIDAD?') == true)
         {
             $.ajax(
                 {
                     type: 'GET',
                     url: '/ABMDirecciones/DeleteLocalidad?id=' + data,
                     contentType: 'application/json; charset=utf=8',
-                    success: function (result) {
-                        alert("REGISTRO ELIMINADO CON EXITO");
-                        location.reload();
+                    success: function (response) {
+                        if (response.result == "SUCCESS") {
+                            alert("REGISTRO BORRADO");
+                            location.reload();
+                        }
                     },
                     error: function (er) {
-                        alert("LA TAREA FALLO CON EXITO");
-                        location.reload();
+                        alert("ERROR AL QUERER BORRAR EL REGISTRO");
                     }
                 });
         }
@@ -189,7 +192,7 @@ $("#btnEditPais").on("click", function () {
         alert("SELECCIONE UN PAIS A MODIFICAR");
     }
     else {
-        confirm('¿DESEA MODIFICAR ESTE PAIS?')
+        if(confirm('¿DESEA MODIFICAR ESTE PAIS?')==true)
         {
             $.ajax(
                 {
@@ -214,7 +217,7 @@ $("#btnEditProvincia").on("click", function () {
         alert("SELECCIONE UNA PROVINCIA A MODIFICAR");
     }
     else {
-        confirm('¿DESEA MODIFICAR ESTA PROVINCIA?')
+        if (confirm('¿DESEA MODIFICAR ESTA PROVINCIA?') == true)
         {
             $.ajax(
                 {
@@ -239,7 +242,7 @@ $("#btnEditLocalidad").on("click", function () {
         alert("SELECCIONE UNA LOCALIDAD A MODIFICAR");
     }
     else {
-        confirm('¿DESEA MODIFICAR ESTA LOCALIDAD?')
+        if (confirm('¿DESEA MODIFICAR ESTA LOCALIDAD?') == true)
         {
             $.ajax(
                 {

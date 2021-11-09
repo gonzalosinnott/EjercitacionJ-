@@ -130,12 +130,18 @@ namespace Envios.MVC.Controllers
             try
             {
                 paisesLogic.Delete(id);
-                return View();
+                return Json(new
+                {
+                    result = "SUCCESS",
+                }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-                return View("Error");
+                return Json(new
+                {
+                    result = "ERROR",
+                }, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -144,12 +150,18 @@ namespace Envios.MVC.Controllers
             try
             {
                 provinciasLogic.Delete(id);
-                return View();
+                return Json(new
+                {
+                    result = "SUCCESS",
+                }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-                return View("Error");
+                return Json(new
+                {
+                    result = "ERROR",
+                }, JsonRequestBehavior.AllowGet);
             }
         }
         public ActionResult DeleteLocalidad(int id)
@@ -157,22 +169,30 @@ namespace Envios.MVC.Controllers
             try
             {
                 localidadesLogic.Delete(id);
-                return View();
+                return Json(new
+                {
+                    result = "SUCCESS",
+                }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-                return View("Error");
+                return Json(new
+                {
+                    result = "ERROR",
+                }, JsonRequestBehavior.AllowGet);
             }
-        }
+        }                
 
         [HttpGet]
         public PartialViewResult EditPais(int id)
         {
 
             var model = paisesLogic.GetDataById(id);
+            ViewBag.PaisId = model.PaisID;
+            ViewBag.PaisName = model.PaisName;
 
-            return PartialView("_EditPaisPartial", model);
+            return PartialView("_EditPaisPartial");
         }
 
         [HttpPost]
@@ -187,8 +207,10 @@ namespace Envios.MVC.Controllers
         {
 
             var model = provinciasLogic.GetDataById(id);
+            ViewBag.ProvinciaID = model.ProvinciaID;
+            ViewBag.ProvinciaName = model.ProvinciaName;
 
-            return PartialView("_EditProvinciaPartial", model);
+            return PartialView("_EditProvinciaPartial");
         }
 
         [HttpPost]
@@ -203,8 +225,10 @@ namespace Envios.MVC.Controllers
         {
 
             var model = localidadesLogic.GetDataById(id);
+            ViewBag.LocalidadID = model.LocalidadID;
+            ViewBag.LocalidadName = model.LocalidadName;
 
-            return PartialView("_EditLocalidadPartial", model);
+            return PartialView("_EditLocalidadPartial");
         }
 
         [HttpPost]
