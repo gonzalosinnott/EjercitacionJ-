@@ -81,7 +81,7 @@ namespace Envios.MVC.Controllers
         [HttpGet]
         public PartialViewResult CreateProvincia()
         {
-            ViewBag.ListaPaises = paisesLogic.GetAll();
+            ViewBag.ListaPaises = paisesLogic.GetAll().Where(p => p.Available != 0); ;
 
             return PartialView("_CreateProvinciaPartial");
         }
@@ -105,7 +105,7 @@ namespace Envios.MVC.Controllers
         [HttpGet]
         public PartialViewResult CreateLocalidad()
         {
-            ViewBag.ListaProvincias = provinciasLogic.GetAll();
+            ViewBag.ListaProvincias = provinciasLogic.GetAll().Where(p => p.Available != 0); 
             return PartialView("_CreateLocalidadPartial");
         }
 

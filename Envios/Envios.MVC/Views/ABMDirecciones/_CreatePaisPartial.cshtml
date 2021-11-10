@@ -15,7 +15,7 @@
     @Html.ValidationSummary(true)
     <div class="modal-body">
         <label>PAIS</label>
-        @Html.TextBoxFor(model => model.PaisName, new { @class = "form-control" })
+        @Html.TextBoxFor(model => model.PaisName, new { @class = "form-control", id = "Pais", required = "required" })
         @Html.ValidationMessageFor(model => model.PaisName)
 
     </div>

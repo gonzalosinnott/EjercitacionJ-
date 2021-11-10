@@ -11,10 +11,11 @@ namespace Envios.MVC.Models
         [Key]
         public int LocalidadId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "CAMPO OBLIGATORIO")]
         [StringLength(50)]
         public string LocalidadName { get; set; }
 
+        [Required(ErrorMessage = "CAMPO OBLIGATORIO")]
         public int ProvinciaId { get; set; }
 
         public int PaisId { get; set; }

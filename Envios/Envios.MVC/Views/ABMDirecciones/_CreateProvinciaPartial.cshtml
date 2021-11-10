@@ -17,13 +17,13 @@
 
         <label>PAIS</label>
 
-        @Html.DropDownListFor(Model => Model.PaisId, new SelectList(ViewBag.ListaPaises as System.Collections.IEnumerable, "PaisId", "PaisName"), "ELIJA UN PAIS", new { @class = "form-control", id = "Pais" })
-        @Html.Hidden("PaisId");
+        @Html.DropDownListFor(Model => Model.PaisId, new SelectList(ViewBag.ListaPaises as System.Collections.IEnumerable, "PaisId", "PaisName"), "ELIJA UN PAIS", new { @class = "form-control", id = "Pais" , required = "required" })
+        @Html.Hidden("PaisId")
 
         <br />
 
         <label>PROVINCIA</label>
-        @Html.TextBoxFor(model => model.ProvinciaName, new { @class = "form-control" })
+        @Html.TextBoxFor(model => model.ProvinciaName, new { @class = "form-control", id = "Provincia", required = "required" })
         @Html.ValidationMessageFor(model => model.ProvinciaName)
 
     </div>
