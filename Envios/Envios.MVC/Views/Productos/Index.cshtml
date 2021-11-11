@@ -1,0 +1,139 @@
+﻿@model List<Envios.MVC.Models.ProductoModel>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+<title></title>
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <div>
+            <h1 class="text-info">
+                PRODUCTOS
+            </h1>
+        </div>
+
+        @Html.ActionLink("CREAR", "CreateProducto", null, new { @data_toggle = "modal", @data_target = "#modal-add", @class = "btn btn-success"})
+
+        <button type="button" class="btn btn-info" data-toggle="modal" id="btnCreateProducto">
+            CREAR SCRIPT
+        </button>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="border p-2">
+            <table class="table table-hover table-responsive table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NOMBRE DEL PRODUCTO</th>
+                        <th scope="col">MARCA</th>
+                        <th scope="col">DESCRIPCION</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col">STOCK</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var producto in Model)
+                    {
+                        <tr>
+                            <td id="ProductoId">@producto.ProductoId</td>
+                            <td>@producto.ProductoName</td>
+                            <td>@producto.ProductoMarca</td>
+                            <td>@producto.ProductoDescription</td>
+                            <td>@producto.ProductoPrecio</td>
+                            <td>@producto.ProductoStock</td>
+                            <td>@Html.ActionLink("EDITAR", "EditProducto", new { id = producto.ProductoId }, new { @data_toggle = "modal", @data_target = "#modal-edit", @class = "btn btn-warning" })
+                                
+                                <button type="button" class="btn btn-warning", id="btnEditProducto">
+                                    EDITAR SCRIPT
+                                </button>                           
+                            
+                            </td>
+                            <td>@Html.ActionLink("BORRAR", "DeleteProducto", new { id = producto.ProductoId }, new { @class = "btn btn-danger", onclick = "return confirm('¿DESEA ELIMINAR ESTE PRODUCTO?')" })</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modal-add" class=" modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id='modal-add-content'></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id='modal-edit-content'></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    $("#btnCreateProducto").on("click", function () {
+        $.ajax(
+            {
+                type: 'GET',
+                url: '/Productos/CreateProducto',
+                contentType: 'application/json; charset=utf=8',
+                success: function (result) {
+                    $('#modal-add-content').html(result);
+                    $('#modal-add').modal('show');
+                },
+                error: function (er) {
+                    alert(er);
+                }
+            });
+    });
+
+    $("#btnEditProducto").on("click", function () {
+        var data = document.getElementById("ProductoId").innerHTML
+        console.log(data)
+        if (confirm('¿DESEA MODIFICAR ESTE PAIS?') == true) {
+            $.ajax(
+                {
+                    type: 'GET',
+                    url: '/Productos/EditProducto?id=' + data,
+                    contentType: 'application/json; charset=utf=8',
+                    success: function (result) {
+                        $('#modal-edit-content').html(result);
+                        $('#modal-edit').modal('show');
+                    },
+                    error: function (er) {
+                        alert(er);
+                    }
+                });
+        }
+
+
+ 
+
+      
+
+    });
+
+
+
+
+
+</script>

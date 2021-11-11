@@ -56,6 +56,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -127,18 +129,32 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\ProductosServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ABMDireccionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CascadaModel.cs" />
     <Compile Include="Models\LocalidadModel.cs" />
     <Compile Include="Models\PaisModel.cs" />
+    <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Models\ProvinciaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ProductosServiceReference\Service.disco" />
+    <None Include="Connected Services\ProductosServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\ProductosServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\ProductosServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -150,6 +166,25 @@
     <Content Include="Scripts\ABMDireccionesScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Connected Services\ProductosServiceReference\Service.wsdl" />
+    <None Include="Connected Services\ProductosServiceReference\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductosServiceReference\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductosServiceReference\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductosServiceReference\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProductosServiceReference\Vista.MVC.ProductosServiceReference.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ProductosServiceReference\Vista.MVC.ProductosServiceReference.Productos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -182,6 +217,9 @@
     <Content Include="Views\ABMDirecciones\Index.cshtml" />
     <Content Include="Views\ABMDirecciones\_EditProvinciaPartial.cshtml" />
     <Content Include="Views\ABMDirecciones\_EditLocalidadPartial.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Productos\_CreateProductoPartial.cshtml" />
+    <Content Include="Views\Productos\_EditProductoPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -212,6 +250,12 @@
       <Project>{3c9e1b5e-52b6-43a7-8933-67250df44ad2}</Project>
       <Name>Envios.Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ProductosServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

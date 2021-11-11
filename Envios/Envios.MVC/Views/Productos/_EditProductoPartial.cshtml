@@ -1,0 +1,45 @@
+﻿@model Envios.MVC.Models.ProductoModel
+<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+
+@{ Layout = null; }
+
+@using (Html.BeginForm("EditProducto", "Productos", new { ProductoId = @ViewBag.ProductoId }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <h3 class="modal-title">EDITAR PRODUCTO</h3>
+    <hr />
+    @Html.ValidationSummary(true)
+<div class="modal-body">
+
+    <p name="ProductoId"> PRODUCTO ID: @ViewBag.ProductoId</p>
+
+    <label>NOMBRE</label>
+    @Html.TextBoxFor(model => model.ProductoName, new { Value = ViewBag.ProductoName, @class = "form-control", id = "Pais", required = "required" })
+    @Html.ValidationMessageFor(model => model.ProductoName)
+
+    <label>MARCA</label>
+    @Html.TextBoxFor(model => model.ProductoMarca, new { Value = ViewBag.ProductoMarca, @class = "form-control", id = "Pais", required = "required" })
+    @Html.ValidationMessageFor(model => model.ProductoMarca)
+
+    <label>DESCRIPCION</label>
+    @Html.TextBoxFor(model => model.ProductoDescription, new { Value = ViewBag.ProductoDescription, @class = "form-control", id = "Pais", required = "required" })
+    @Html.ValidationMessageFor(model => model.ProductoDescription)
+
+    <label>PRECIO</label>
+    @Html.TextBoxFor(model => model.ProductoPrecio, new { Value = ViewBag.ProductoPrecio, @class = "form-control", id = "Pais", required = "required" })
+    @Html.ValidationMessageFor(model => model.ProductoPrecio)
+
+    <label>STOCK</label>
+    @Html.TextBoxFor(model => model.ProductoStock, new { Value = ViewBag.ProductoStock, @class = "form-control", id = "Pais", required = "required" })
+    @Html.ValidationMessageFor(model => model.ProductoStock)
+
+</div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
+        <button type="submit" class="btn btn-primary">MODIFICAR</button>
+    </div>
+}
+
