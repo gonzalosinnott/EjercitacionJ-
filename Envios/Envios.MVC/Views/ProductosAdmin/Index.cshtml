@@ -1,0 +1,82 @@
+﻿@model List<Envios.MVC.Models.ProductoModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <br />
+        <div>
+            <h1 class="text-info">
+                PRODUCTOS
+
+            </h1>
+        </div>
+        <button class="btn btn-success rounded-pill btn-lg fas fa-plus" onclick='javascript: CreateProducto()'></button>
+        <br />
+        <br />
+
+        <div class="card ">
+            <div class="border p-2">
+
+                <table class="table table-hover table-responsive table-sm " id="Productos">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">PRODUCTO</th>
+                            <th scope="col">MARCA</th>
+                            <th scope="col">DESCRIPCION</th>
+                            <th scope="col">PRECIO</th>
+                            <th scope="col">STOCK</th>
+                            <th scope="col">IMAGEN</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var producto in Model)
+                        {
+                            <tr>
+                                <td id="Id">@producto.ProductoId</td>
+                                <td>@producto.ProductoName</td>
+                                <td>@producto.ProductoMarca</td>
+                                <td>@producto.ProductoDescription</td>
+                                <td>@producto.ProductoPrecio</td>
+                                <td>@producto.ProductoStock</td>
+                                <td>@producto.ProductoImage</td>
+                                <td><button class="btn btn-warning rounded-pill fas fa-edit" onclick='javascript: EditProducto(@producto.ProductoId)'></button></td>
+                                <td><button class="btn btn-danger rounded-pill fas fa-trash-alt" onclick='javascript: DeleteProducto(@producto.ProductoId)'></button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-add" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id='modal-add-content'></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id='modal-edit-content'></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

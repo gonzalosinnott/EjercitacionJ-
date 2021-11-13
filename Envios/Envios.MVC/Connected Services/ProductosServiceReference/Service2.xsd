@@ -11,6 +11,7 @@
       <xs:element minOccurs="0" name="Available" type="xs:int" />
       <xs:element minOccurs="0" name="ProductoDescription" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductoId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductoImage" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductoMarca" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductoName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductoPrecio" type="xs:double" />

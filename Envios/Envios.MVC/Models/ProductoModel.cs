@@ -31,5 +31,7 @@ namespace Envios.MVC.Models
 
         [Required(ErrorMessage = "CAMPO OBLIGATORIO")]
         public int ProductoStock { get; set; }
+
+        public string ProductoImage { get; set; }
     }
 }

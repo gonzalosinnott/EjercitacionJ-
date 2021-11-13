@@ -10,3 +10,15 @@ D:\NEORIS\Capacitacion\ServiceBackEnd.Entitites\obj\Debug\ServiceBackEnd.Entitit
 D:\NEORIS\Capacitacion\ServiceBackEnd.Entitites\obj\Debug\ServiceBackEnd.Entitites.csproj.CopyComplete
 D:\NEORIS\Capacitacion\ServiceBackEnd.Entitites\obj\Debug\ServiceBackEnd.Entitites.dll
 D:\NEORIS\Capacitacion\ServiceBackEnd.Entitites\obj\Debug\ServiceBackEnd.Entitites.pdb
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\bin\Debug\ServiceBackEnd.Entitites.dll.config
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\bin\Debug\ServiceBackEnd.Entitites.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\bin\Debug\ServiceBackEnd.Entitites.pdb
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\bin\Debug\EntityFramework.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\bin\Debug\EntityFramework.SqlServer.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\bin\Debug\EntityFramework.xml
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\bin\Debug\EntityFramework.SqlServer.xml
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\obj\Debug\ServiceBackEnd.Entitites.csproj.AssemblyReference.cache
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\obj\Debug\ServiceBackEnd.Entitites.csproj.CoreCompileInputs.cache
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\obj\Debug\ServiceBackEnd.Entitites.csproj.CopyComplete
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\obj\Debug\ServiceBackEnd.Entitites.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ServiceBackEnd\ServiceBackEnd.Entitites\obj\Debug\ServiceBackEnd.Entitites.pdb

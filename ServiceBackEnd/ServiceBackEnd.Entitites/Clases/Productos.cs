@@ -29,5 +29,7 @@ namespace ServiceBackEnd.Entities.Clases
         public int Available { get; set; }
 
         public int ProductoStock { get; set; }
+
+        public string ProductoImage { get; set; }
     }
 }

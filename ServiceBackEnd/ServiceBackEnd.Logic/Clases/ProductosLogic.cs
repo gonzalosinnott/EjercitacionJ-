@@ -31,6 +31,8 @@ namespace ServiceBackEnd.Logic
                 productoUpdate.ProductoDescription = producto.ProductoDescription;
                 productoUpdate.ProductoStock = producto.ProductoStock;
                 productoUpdate.ProductoPrecio = producto.ProductoPrecio;
+                productoUpdate.ProductoImage = producto.ProductoImage;
+
 
                 context.SaveChanges();
             }

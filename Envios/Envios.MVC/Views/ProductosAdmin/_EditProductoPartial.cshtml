@@ -1,0 +1,46 @@
+﻿@model Envios.MVC.Models.ProductoModel
+
+@using (Html.BeginForm("EditProducto", "ProductosAdmin", new { ProductoId = @ViewBag.ProductoId }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <br />
+    <h3 class="modal-title text-center">EDITAR PRODUCTO</h3>
+    <hr />
+
+    @Html.ValidationSummary(true)
+
+    <div class="modal-body">
+        <p name="ProductoId"> PRODUCTO ID: @ViewBag.ProductoId</p>
+
+        <label>NOMBRE</label>
+        @Html.TextBoxFor(model => model.ProductoName, new { Value = ViewBag.ProductoName, @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(model => model.ProductoName)
+
+        <label>MARCA</label>
+        @Html.TextBoxFor(model => model.ProductoMarca, new { Value = ViewBag.ProductoMarca, @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(model => model.ProductoMarca)
+
+        <label>DESCRIPCION</label>
+        @Html.TextBoxFor(model => model.ProductoDescription, new { Value = ViewBag.ProductoDescription, @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(model => model.ProductoDescription)
+
+        <label>PRECIO</label>
+        @Html.TextBoxFor(model => model.ProductoPrecio, new { Value = ViewBag.ProductoPrecio, @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(model => model.ProductoPrecio)
+
+        <label>STOCK</label>
+        @Html.TextBoxFor(model => model.ProductoStock, new { Value = ViewBag.ProductoStock, @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(model => model.ProductoStock)
+
+        <label>IMAGEN</label>
+        @Html.TextBoxFor(model => model.ProductoImage, new { Value = ViewBag.ProductoImage, placeholder = "./Assets/producto.img", @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ProductoImage)
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
+        <button type="submit" class="btn btn-primary">MODIFICAR</button>
+    </div>
+}
+

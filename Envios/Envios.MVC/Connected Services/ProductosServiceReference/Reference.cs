@@ -32,6 +32,9 @@ namespace Vista.MVC.ProductosServiceReference {
         private int ProductoIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductoImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductoMarcaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -88,6 +91,19 @@ namespace Vista.MVC.ProductosServiceReference {
                 if ((this.ProductoIdField.Equals(value) != true)) {
                     this.ProductoIdField = value;
                     this.RaisePropertyChanged("ProductoId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductoImage {
+            get {
+                return this.ProductoImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductoImageField, value) != true)) {
+                    this.ProductoImageField = value;
+                    this.RaisePropertyChanged("ProductoImage");
                 }
             }
         }

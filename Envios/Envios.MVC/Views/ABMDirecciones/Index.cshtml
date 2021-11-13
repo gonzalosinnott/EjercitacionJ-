@@ -1,9 +1,7 @@
 ﻿@model Envios.MVC.Models.CascadaModel
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-@Scripts.Render("~/Scripts/ABMDireccionesScript.js")
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Direcciones";
 }
 <!DOCTYPE html>
 
@@ -25,21 +23,17 @@
                         <td>
                             @if (ViewBag.ListaPaises != null)
                             {
-                                @Html.DropDownListFor(Model => Model.PaisId, new SelectList(ViewBag.ListaPaises as System.Collections.IEnumerable, "PaisId", "PaisName"), "ELIJA UN PAIS", new { @class = "form-control", id = "Pais" })}
+                                @Html.DropDownListFor(Model => Model.PaisId, new SelectList(ViewBag.ListaPaises as System.Collections.IEnumerable, "PaisId", "PaisName"), "ELIJA UN PAIS", new { @class = "form-control", id = "Pais" })
+                            }
                         </td>
                         <td>
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-url="@Url.Action("CreatePais","ABMDirecciones")" id="btnCreatePais">
-                                CREAR PAIS
-                            </button>
-                        <td>
-                            <button type="button" class="btn btn-danger" data-url="@Url.Action("EditPais","ABMDirecciones")" id="btnEditPais">
-                                EDITAR PAIS
-                            </button>
+                            <button class="btn btn-success rounded-pill fas fa-plus" onclick='javascript: CreatePais()'></button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger" id="btnDeletePais">
-                                ELIMINAR PAIS
-                            </button>
+                            <button class="btn btn-warning rounded-pill fas fa-edit"   onclick='javascript: EditPais()'></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger rounded-pill fas fa-trash-alt" onclick='javascript: DeletePais()'></button>
                         </td>
                     </tr>
 
@@ -49,19 +43,13 @@
                             @Html.DropDownListFor(Model => Model.ProvinciaId, new SelectList(Enumerable.Empty<SelectListItem>(), "ProvinciaId", "ProvinciaName"), "ELIJA UNA PROVINCIA", new { @class = "form-control", id = "Provincia" })
                         </td>
                         <td>
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-url="@Url.Action("CreateProvincia","ABMDirecciones")" id="btnCreateProvincia">
-                                CREAR PROVINCIA
-                            </button>
+                            <button class="btn btn-success rounded-pill fas fa-plus" onclick='javascript: CreateProvincia()'></button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger" data-url="@Url.Action("EditProvincia","ABMDirecciones")" id="btnEditProvincia">
-                                EDITAR PROVINCIA
-                            </button>
+                            <button class="btn btn-warning rounded-pill fas fa-edit" onclick='javascript: EditProvincia()'></button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger" id="btnDeleteProvincia">
-                                ELIMINAR PROVINCIA
-                            </button>
+                            <button class="btn btn-danger rounded-pill fas fa-trash-alt" onclick='javascript: DeleteProvincia()'></button>
                         </td>
                     </tr>
                     <tr>
@@ -70,18 +58,13 @@
                             @Html.DropDownListFor(Model => Model.LocalidadId, new SelectList(Enumerable.Empty<SelectListItem>(), "LocalidadId", "LocalidadName"), "ELIJA UNA LOCALIDAD", new { @class = "form-control", id = "Localidad" })
                         </td>
                         <td>
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-url="@Url.Action("CreateLocalidad","ABMDirecciones")" id="btnCreateLocalidad">
-                                CREAR LOCALIDAD
-                            </button>
-                        <td>
-                            <button type="button" class="btn btn-danger" data-url="@Url.Action("EditLocalidad","ABMDirecciones")" id="btnEditLocalidad">
-                                EDITAR LOCALIDAD
-                            </button>
+                            <button class="btn btn-success rounded-pill fas fa-plus" onclick='javascript: CreateLocalidad()'></button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger" id="btnDeleteLocalidad">
-                                ELIMINAR LOCALIDAD
-                            </button>
+                            <button class="btn btn-warning rounded-pill fas fa-edit" onclick='javascript: EditLocalidad()'></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger rounded-pill fas fa-trash-alt" onclick='javascript: DeleteLocalidad()'></button>
                         </td>
                     </tr>
 
@@ -92,9 +75,8 @@
                 </tbody>
             </table>
 
-            <input type="submit" value="CARGAR DIRECCION" class="btn btn-info" id="submitbtn" />
-            @Html.ActionLink("BORRAR", "Index", "ABMDirecciones", new { @class = "btn btn-info" })
-
+            <button class="btn btn-success rounded-pill fas fa-check" onclick='javascript: CargarDireccion()'></button>
+            <button class="btn btn-danger rounded-pill fas fa-undo" onclick='javascript: LimpiarFormulario()'></button>
 
             <br />
             <br />
@@ -106,7 +88,7 @@
     </div>
 
 
-    <div id="modal-add" class=" modal fade in">
+    <div id="modal-add" class="modal fade">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div id='modal-add-content'></div>
