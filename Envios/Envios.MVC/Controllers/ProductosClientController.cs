@@ -15,27 +15,35 @@ namespace Vista.MVC.Controllers
         // GET: Productos
         public ActionResult Index()
         {
-            var productos = client.GetAllProducts();
-            List<ProductoModel> listaProductos = new List<ProductoModel>();
-
-            foreach (var item in productos)
+            try
             {
-                ProductoModel auxProducto = new ProductoModel
+                var productos = client.GetAllProducts();
+                List<ProductoModel> listaProductos = new List<ProductoModel>();
+
+                foreach (var item in productos)
                 {
-                    ProductoId = item.ProductoId,
-                    ProductoName = item.ProductoName,
-                    ProductoMarca = item.ProductoMarca,
-                    ProductoDescription = item.ProductoDescription,
-                    ProductoPrecio = item.ProductoPrecio,
-                    ProductoStock = item.ProductoStock,
-                    Available = item.Available,
-                    ProductoImage = item.ProductoImage
-                };
+                    ProductoModel auxProducto = new ProductoModel
+                    {
+                        ProductoId = item.ProductoId,
+                        ProductoName = item.ProductoName,
+                        ProductoMarca = item.ProductoMarca,
+                        ProductoDescription = item.ProductoDescription,
+                        ProductoPrecio = item.ProductoPrecio,
+                        ProductoStock = item.ProductoStock,
+                        Available = item.Available,
+                        ProductoImage = item.ProductoImage
+                    };
 
-                listaProductos.Add(auxProducto);
+                    listaProductos.Add(auxProducto);
+                }
+                ViewBag.Productos = listaProductos.Count();
+                return View(listaProductos);
             }
-
-            return View(listaProductos);
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View("Error");
+            }
         }
     }
 }

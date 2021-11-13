@@ -20,8 +20,16 @@ namespace Envios.MVC.Controllers
         // GET: ABMDirecciones
         public ActionResult Index()
         {
-            ViewBag.ListaPaises = paisesLogic.GetAll().Where(p => p.Available != 0);
-            return View();
+            try
+            {
+                ViewBag.ListaPaises = paisesLogic.GetAll().Where(p => p.Available != 0);
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View("Error");
+            }
         }       
 
         private IList<Provincias> GetProvincias(int paisId)
