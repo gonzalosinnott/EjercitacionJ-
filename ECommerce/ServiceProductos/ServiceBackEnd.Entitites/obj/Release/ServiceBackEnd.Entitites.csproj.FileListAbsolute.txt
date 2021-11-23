@@ -1,0 +1,12 @@
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\bin\Release\ServiceBackEnd.Entitites.dll.config
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\bin\Release\ServiceBackEnd.Entitites.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\bin\Release\ServiceBackEnd.Entitites.pdb
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\bin\Release\EntityFramework.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\bin\Release\EntityFramework.SqlServer.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\bin\Release\EntityFramework.xml
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\bin\Release\EntityFramework.SqlServer.xml
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\obj\Release\ServiceBackEnd.Entitites.csproj.AssemblyReference.cache
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\obj\Release\ServiceBackEnd.Entitites.csproj.CoreCompileInputs.cache
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\obj\Release\ServiceBackEnd.Entitites.csproj.CopyComplete
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\obj\Release\ServiceBackEnd.Entitites.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Entitites\obj\Release\ServiceBackEnd.Entitites.pdb

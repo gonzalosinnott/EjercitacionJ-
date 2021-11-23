@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Customers>
+	<Customer>
+		<id>1</id>
+		<first_name>Melisande</first_name>
+		<last_name>Purrington</last_name>
+	</Customer>
+	<Customer>
+		<id>2</id>
+		<first_name>Siffre</first_name>
+		<last_name>Peres</last_name>
+	</Customer>
+	<Customer>
+		<id>3</id>
+		<first_name>Aloysius</first_name>
+		<last_name>McInnery</last_name>
+	</Customer>
+	<Customer>
+		<id>4</id>
+		<first_name>Delphine</first_name>
+		<last_name>Milthorpe</last_name>
+	</Customer>
+	<Customer>
+		<id>5</id>
+		<first_name>Valery</first_name>
+		<last_name>MacFaul</last_name>
+	</Customer>
+	<Customer>
+		<id>6</id>
+		<first_name>Orton</first_name>
+		<last_name>Curzon</last_name>
+	</Customer>
+	<Customer>
+		<id>7</id>
+		<first_name>Denys</first_name>
+		<last_name>Knibbs</last_name>
+	</Customer>
+	<Customer>
+		<id>8</id>
+		<first_name>Avril</first_name>
+		<last_name>Telfer</last_name>
+	</Customer>
+	<Customer>
+		<id>9</id>
+		<first_name>Adler</first_name>
+		<last_name>Reynoldson</last_name>
+	</Customer>
+	<Customer>
+		<id>10</id>
+		<first_name>Sarene</first_name>
+		<last_name>Varvara</last_name>
+	</Customer>
+</Customers>

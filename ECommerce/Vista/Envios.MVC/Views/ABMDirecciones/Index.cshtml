@@ -1,0 +1,108 @@
+﻿@model Envios.MVC.Models.CascadaModel
+
+@{
+    ViewBag.Title = "Direcciones";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="~/Scripts/ABMDireccionesScript.js"></script>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <table class="table table-responsive table-sm">
+                <tbody>
+                    <tr>
+                        <td colspan="5"><h2>CARGAR ORDEN</h2></td>
+                    </tr>
+                    <tr>
+                        <td><label>PAIS</label></td>
+                        <td>
+                            @if (ViewBag.ListaPaises != null)
+                            {
+                                @Html.DropDownListFor(Model => Model.PaisId, new SelectList(ViewBag.ListaPaises as System.Collections.IEnumerable, "PaisId", "PaisName"), "ELIJA UN PAIS", new { @class = "form-control", id = "Pais" })
+                            }
+                        </td>
+                        <td>
+                            <button class="btn btn-success rounded-pill fas fa-plus" onclick='javascript: CreatePais()'></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning rounded-pill fas fa-edit"   onclick='javascript: EditPais()'></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger rounded-pill fas fa-trash-alt" onclick='javascript: DeletePais()'></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>PROVINCIA</label></td>
+                        <td>
+                            @Html.DropDownListFor(Model => Model.ProvinciaId, new SelectList(Enumerable.Empty<SelectListItem>(), "ProvinciaId", "ProvinciaName"), "ELIJA UNA PROVINCIA", new { @class = "form-control", id = "Provincia" })
+                        </td>
+                        <td>
+                            <button class="btn btn-success rounded-pill fas fa-plus" onclick='javascript: CreateProvincia()'></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning rounded-pill fas fa-edit" onclick='javascript: EditProvincia()'></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger rounded-pill fas fa-trash-alt" onclick='javascript: DeleteProvincia()'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>LOCALIDAD</label></td>
+                        <td>
+                            @Html.DropDownListFor(Model => Model.LocalidadId, new SelectList(Enumerable.Empty<SelectListItem>(), "LocalidadId", "LocalidadName"), "ELIJA UNA LOCALIDAD", new { @class = "form-control", id = "Localidad" })
+                        </td>
+                        <td>
+                            <button class="btn btn-success rounded-pill fas fa-plus" onclick='javascript: CreateLocalidad()'></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning rounded-pill fas fa-edit" onclick='javascript: EditLocalidad()'></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger rounded-pill fas fa-trash-alt" onclick='javascript: DeleteLocalidad()'></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>CALLE</label></td>
+                        <td colspan="5">@Html.TextBox("CalleName", null, new { @class = "form-control" })</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-success rounded-pill fas fa-check" onclick='javascript: CargarDireccion()'></button>
+            <button class="btn btn-danger rounded-pill fas fa-undo" onclick='javascript: LimpiarFormulario()'></button>
+
+            <br />
+            <br />
+            @Html.TextArea("txtInfo", string.Empty, 4, 55, new { @class = "form-group", @readonly = true })
+
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+    <div id="modal-add" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id='modal-add-content'></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit" class="modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div id='modal-edit-content'></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

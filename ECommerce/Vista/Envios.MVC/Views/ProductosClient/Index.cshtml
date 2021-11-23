@@ -1,0 +1,94 @@
+﻿@model List<Envios.MVC.Models.ProductoModel>
+
+@{ ViewBag.Title = "PRODUCTOS CLIENT"; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="~/Scripts/ProductosClientScript.js"></script>
+    <title></title>
+</head>
+<body>
+    <div class="container-fluid">
+        <br />
+        <div class="clearfix">
+            <h1><span class="text-info">PRODUCTOS</span></h1>
+            <div class="float-right opener">
+                <button class="btn btn-warning btn-lg rounded-pill fas fa-shopping-cart btnShowPopup"></button>
+            </div>
+        </div>
+        <br />
+
+
+
+        <div id="modal-list" class="modal fade">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div id='modal-list-content'></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        @if (ViewBag.Productos > 0)
+        {
+            <div class="container-fluid">
+                <div class="row">
+                    @foreach (var producto in Model)
+                    {
+                        <div class="col col-sm-12 col-md-4">
+                            <div class="card">
+                                <div id="imgDiv">
+                                    <img id="img" class="card-img-top" srcset="@producto.ProductoImage , ./Assets/default.jpg" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">@producto.ProductoName</h4>
+                                    <p class="card-text">@producto.ProductoDescription</p>
+                                    @if (producto.ProductoStock < 6 && producto.ProductoStock > 0)
+                                    {
+                                        <div class="alert alert-danger" role="alert">
+                                            <p class="card-text ">!APURATE QUEDAN SOLO @producto.ProductoStock UNIDADES!</p>
+                                        </div>
+                                    }
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">MARCA: @producto.ProductoMarca</li>
+                                    <li class="list-group-item">PRECIO: @producto.ProductoPrecio</li>
+                                </ul>
+                                <div class="card-body card text-center">
+                                    @if (producto.ProductoStock == 0)
+                                    {
+                                        <div class="alert alert-danger" role="alert">
+                                            <p class="card-text ">PRODUCTO FUERA DE STOCK</p>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                <div class="pull-left" style="margin-right:5px">
+                                    <a href="#" class="btn btn-primary" onclick='javascript: ComprarProducto(@producto.ProductoId, document.getElementById("@producto.ProductoId +_cantidad").value)'>COMPRAR</a>
+                                    <input type="number" id='@producto.ProductoId +_cantidad' name='@producto.ProductoId +_cantidad' placeholder="CANTIDAD" autocomplete="off" required min="1" max=@producto.ProductoStock>
+                                </div>
+                                    }
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        else
+        {
+            <h2 class="text-info">NO HAY PRODUCTOS DISPONIBLES</h2>
+        }
+    </div>
+
+
+
+</body>
+</html>

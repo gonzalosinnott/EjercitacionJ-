@@ -1,0 +1,15 @@
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\ServiceBackEnd.Connection.dll.config
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\ServiceBackEnd.Connection.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\ServiceBackEnd.Connection.pdb
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\EntityFramework.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\EntityFramework.SqlServer.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\ServiceBackEnd.Entitites.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\ServiceBackEnd.Entitites.pdb
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\ServiceBackEnd.Entitites.dll.config
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\EntityFramework.xml
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\bin\Release\EntityFramework.SqlServer.xml
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\obj\Release\ServiceBackEnd.Connection.csproj.AssemblyReference.cache
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\obj\Release\ServiceBackEnd.Connection.csproj.CoreCompileInputs.cache
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\obj\Release\ServiceBackEnd.Connection.csproj.CopyComplete
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\obj\Release\ServiceBackEnd.Connection.dll
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\ServiceProductos\ServiceBackEnd.Connection\obj\Release\ServiceBackEnd.Connection.pdb

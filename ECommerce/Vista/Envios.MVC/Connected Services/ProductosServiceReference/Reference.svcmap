@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ac8f2b12-8d3a-476a-a478-2432b115ce51" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://proyectoonboarding.soap/ProductosService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProductosService.xsd" MetadataType="Schema" ID="61638ce6-e300-4243-ab2e-d090c0f5c74d" SourceId="1" SourceUrl="http://proyectoonboarding.soap/ProductosService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProductosService.disco" MetadataType="Disco" ID="144af1f2-9650-435c-9771-733266c67b31" SourceId="1" SourceUrl="http://proyectoonboarding.soap/ProductosService.svc?disco" />
+    <MetadataFile FileName="ProductosService.wsdl" MetadataType="Wsdl" ID="d6d55f42-74e7-45ee-9644-87811d86392b" SourceId="1" SourceUrl="http://proyectoonboarding.soap/ProductosService.svc?wsdl" />
+    <MetadataFile FileName="ProductosService1.xsd" MetadataType="Schema" ID="128b0819-9c62-4de7-a33c-3f3c81ecfa3f" SourceId="1" SourceUrl="http://proyectoonboarding.soap/ProductosService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProductosService2.xsd" MetadataType="Schema" ID="fe88e773-50f2-460c-930c-6d33c169cea0" SourceId="1" SourceUrl="http://proyectoonboarding.soap/ProductosService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

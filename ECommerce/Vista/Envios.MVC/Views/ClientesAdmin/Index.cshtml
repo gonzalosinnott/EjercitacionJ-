@@ -1,0 +1,63 @@
+﻿@model List<Vista.MVC.Models.ClienteModel>
+
+@{ ViewBag.Title = "ADMINISTRACION DE CLIENTES"; }
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="~/Scripts/ProductosAdminScript.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <br />
+        <div>
+            <h1 class="text-info">
+                CLIENTES
+            </h1>
+        </div>
+        <button class="btn btn-success rounded-pill btn-lg fas fa-plus"></button>
+        <br />
+        <br />
+
+        <div class="container-fluid ">
+            <div class="border p-2">
+                @if (ViewBag.Clientes > 0)
+                 {
+                    <table class="table table-hover table-responsive table-sm " id="Clientes">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">NOMBRE</th>
+                                <th scope="col">APELLIDO</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var cliente in Model)
+                             {
+                                <tr>
+                                    <td id="Id">@cliente.Id</td>
+                                    <td>@cliente.FirstName</td>
+                                    <td>@cliente.LastName</td>
+                                    <td><button class="btn btn-warning rounded-pill fas fa-edit"></button></td>
+                                    <td><button class="btn btn-danger rounded-pill fas fa-trash-alt"></button></td>
+                                </tr>
+                             }
+                        </tbody>
+                    </table> 
+                 }
+                 else
+                 {
+                    <h2 class="text-info">
+                        NO HAY CLIENTES DISPONIBLES
+                    </h2>
+                 } 
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
