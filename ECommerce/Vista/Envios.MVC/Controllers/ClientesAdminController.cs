@@ -11,7 +11,6 @@ namespace Vista.MVC.Controllers
     {
         ClientesServiceReference.ClienteServiceClient client = new ClientesServiceReference.ClienteServiceClient();
 
-        // GET: ClientesAdmin
         public ActionResult Index()
         {
             try
@@ -39,6 +38,67 @@ namespace Vista.MVC.Controllers
                 ViewBag.Error = ex.Message;
                 return View("Error");
             }
+        }
+
+        public ActionResult DeleteCliente(int id)
+        {
+            try
+            {
+                client.DeleteCliente(id);
+                return Json(new
+                {
+                    result = "SUCCESS",
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return Json(new
+                {
+                    result = "ERROR",
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
+        public PartialViewResult CreateCliente()
+        {
+            return PartialView("_CreateClientePartial");
+        }
+
+        [HttpPost]
+        public ActionResult CreateCliente(ClientesServiceReference.Clientes model)
+        {
+            model.Available = 1;
+
+            if (model != null)
+            {
+                client.AddCliente(model);
+                return RedirectToAction("Index", "ClientesAdmin");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        [HttpGet]
+        public PartialViewResult EditCLiente(int id)
+        {
+
+            var model = client.GetClienteById(id);
+            ViewBag.ClienteId = model.Id;
+            ViewBag.FirstName = model.FirstName;
+            ViewBag.LastName = model.LastName;
+
+            return PartialView("_EditClientePartial");
+        }
+
+        [HttpPost]
+        public ActionResult EditCliente(ClientesServiceReference.Clientes model)
+        {
+            client.UpdateCliente(model);
+            return RedirectToAction("Index", "ClientesAdmin");
         }
     }
 }

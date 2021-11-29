@@ -23,6 +23,9 @@ namespace Vista.MVC.ClientesServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AvailableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FirstNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -38,6 +41,19 @@ namespace Vista.MVC.ClientesServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Available {
+            get {
+                return this.AvailableField;
+            }
+            set {
+                if ((this.AvailableField.Equals(value) != true)) {
+                    this.AvailableField = value;
+                    this.RaisePropertyChanged("Available");
+                }
             }
         }
         
@@ -99,6 +115,30 @@ namespace Vista.MVC.ClientesServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteService/GetAllClientes", ReplyAction="http://tempuri.org/IClienteService/GetAllClientesResponse")]
         System.Threading.Tasks.Task<Vista.MVC.ClientesServiceReference.Clientes[]> GetAllClientesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteService/AddCliente", ReplyAction="http://tempuri.org/IClienteService/AddClienteResponse")]
+        string AddCliente(Vista.MVC.ClientesServiceReference.Clientes cliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteService/AddCliente", ReplyAction="http://tempuri.org/IClienteService/AddClienteResponse")]
+        System.Threading.Tasks.Task<string> AddClienteAsync(Vista.MVC.ClientesServiceReference.Clientes cliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteService/GetClienteById", ReplyAction="http://tempuri.org/IClienteService/GetClienteByIdResponse")]
+        Vista.MVC.ClientesServiceReference.Clientes GetClienteById(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteService/GetClienteById", ReplyAction="http://tempuri.org/IClienteService/GetClienteByIdResponse")]
+        System.Threading.Tasks.Task<Vista.MVC.ClientesServiceReference.Clientes> GetClienteByIdAsync(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteService/UpdateCliente", ReplyAction="http://tempuri.org/IClienteService/UpdateClienteResponse")]
+        string UpdateCliente(Vista.MVC.ClientesServiceReference.Clientes cliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteService/UpdateCliente", ReplyAction="http://tempuri.org/IClienteService/UpdateClienteResponse")]
+        System.Threading.Tasks.Task<string> UpdateClienteAsync(Vista.MVC.ClientesServiceReference.Clientes cliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteService/DeleteCliente", ReplyAction="http://tempuri.org/IClienteService/DeleteClienteResponse")]
+        string DeleteCliente(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteService/DeleteCliente", ReplyAction="http://tempuri.org/IClienteService/DeleteClienteResponse")]
+        System.Threading.Tasks.Task<string> DeleteClienteAsync(int value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,6 +174,38 @@ namespace Vista.MVC.ClientesServiceReference {
         
         public System.Threading.Tasks.Task<Vista.MVC.ClientesServiceReference.Clientes[]> GetAllClientesAsync() {
             return base.Channel.GetAllClientesAsync();
+        }
+        
+        public string AddCliente(Vista.MVC.ClientesServiceReference.Clientes cliente) {
+            return base.Channel.AddCliente(cliente);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddClienteAsync(Vista.MVC.ClientesServiceReference.Clientes cliente) {
+            return base.Channel.AddClienteAsync(cliente);
+        }
+        
+        public Vista.MVC.ClientesServiceReference.Clientes GetClienteById(int value) {
+            return base.Channel.GetClienteById(value);
+        }
+        
+        public System.Threading.Tasks.Task<Vista.MVC.ClientesServiceReference.Clientes> GetClienteByIdAsync(int value) {
+            return base.Channel.GetClienteByIdAsync(value);
+        }
+        
+        public string UpdateCliente(Vista.MVC.ClientesServiceReference.Clientes cliente) {
+            return base.Channel.UpdateCliente(cliente);
+        }
+        
+        public System.Threading.Tasks.Task<string> UpdateClienteAsync(Vista.MVC.ClientesServiceReference.Clientes cliente) {
+            return base.Channel.UpdateClienteAsync(cliente);
+        }
+        
+        public string DeleteCliente(int value) {
+            return base.Channel.DeleteCliente(value);
+        }
+        
+        public System.Threading.Tasks.Task<string> DeleteClienteAsync(int value) {
+            return base.Channel.DeleteClienteAsync(value);
         }
     }
 }

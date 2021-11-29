@@ -13,16 +13,92 @@
   <wsdl:message name="IClienteService_GetAllClientes_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllClientesResponse" />
   </wsdl:message>
+  <wsdl:message name="IClienteService_AddCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCliente" />
+  </wsdl:message>
+  <wsdl:message name="IClienteService_AddCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteService_GetClienteById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClienteById" />
+  </wsdl:message>
+  <wsdl:message name="IClienteService_GetClienteById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClienteByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteService_UpdateCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCliente" />
+  </wsdl:message>
+  <wsdl:message name="IClienteService_UpdateCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClienteService_DeleteCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCliente" />
+  </wsdl:message>
+  <wsdl:message name="IClienteService_DeleteCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IClienteService">
     <wsdl:operation name="GetAllClientes">
       <wsdl:input wsaw:Action="http://tempuri.org/IClienteService/GetAllClientes" message="tns:IClienteService_GetAllClientes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IClienteService/GetAllClientesResponse" message="tns:IClienteService_GetAllClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteService/AddCliente" message="tns:IClienteService_AddCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteService/AddClienteResponse" message="tns:IClienteService_AddCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClienteById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteService/GetClienteById" message="tns:IClienteService_GetClienteById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteService/GetClienteByIdResponse" message="tns:IClienteService_GetClienteById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteService/UpdateCliente" message="tns:IClienteService_UpdateCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteService/UpdateClienteResponse" message="tns:IClienteService_UpdateCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClienteService/DeleteCliente" message="tns:IClienteService_DeleteCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClienteService/DeleteClienteResponse" message="tns:IClienteService_DeleteCliente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IClienteService" type="tns:IClienteService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllClientes">
       <soap:operation soapAction="http://tempuri.org/IClienteService/GetAllClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCliente">
+      <soap:operation soapAction="http://tempuri.org/IClienteService/AddCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClienteById">
+      <soap:operation soapAction="http://tempuri.org/IClienteService/GetClienteById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <soap:operation soapAction="http://tempuri.org/IClienteService/UpdateCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCliente">
+      <soap:operation soapAction="http://tempuri.org/IClienteService/DeleteCliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

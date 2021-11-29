@@ -11,8 +11,6 @@ namespace Vista.MVC.Controllers
     {
         ProductosServiceReference.ProductosServiceClient client = new ProductosServiceReference.ProductosServiceClient();
         
-        
-        // GET: Productos
         public ActionResult Index()
         {
             try

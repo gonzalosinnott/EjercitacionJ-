@@ -1,0 +1,30 @@
+﻿@model Vista.MVC.Models.ClienteModel
+
+@using (Html.BeginForm("EditCliente", "ClientesAdmin", new { Id = @ViewBag.ClienteId }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <br />
+    <h3 class="modal-title text-center">EDITAR CLIENTE</h3>
+    <hr />
+
+    @Html.ValidationSummary(true)
+
+    <div class="modal-body">
+        <p name="ProductoId"> CLIENTE ID: @ViewBag.ClienteId</p>
+
+        <label>NOMBRE</label>
+        @Html.TextBoxFor(model => model.FirstName, new { Value = ViewBag.FirstName, @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(model => model.FirstName)
+
+        <label>MARCA</label>
+        @Html.TextBoxFor(model => model.LastName, new { Value = ViewBag.LastName, @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(model => model.LastName)        
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
+        <button type="submit" class="btn btn-primary">MODIFICAR</button>
+    </div>
+}
+

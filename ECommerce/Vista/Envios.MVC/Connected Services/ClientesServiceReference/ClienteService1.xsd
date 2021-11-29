@@ -8,6 +8,7 @@
   <xs:element name="ArrayOfClientes" nillable="true" type="tns:ArrayOfClientes" />
   <xs:complexType name="Clientes">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Available" type="xs:int" />
       <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />

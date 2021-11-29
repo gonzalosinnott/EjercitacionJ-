@@ -192,6 +192,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Scripts\ClientesAdminScript.js" />
     <Content Include="Scripts\ProductosClientScript.js" />
     <Content Include="Scripts\style.css" />
     <Content Include="favicon.ico" />
@@ -224,6 +225,8 @@
     <Content Include="Views\ProductosClient\Index.cshtml" />
     <Content Include="Views\ProductosClient\_ListarProductoPartial.cshtml" />
     <Content Include="Views\ClientesAdmin\Index.cshtml" />
+    <Content Include="Views\ClientesAdmin\_CreateClientePartial.cshtml" />
+    <Content Include="Views\ClientesAdmin\_EditClientePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
