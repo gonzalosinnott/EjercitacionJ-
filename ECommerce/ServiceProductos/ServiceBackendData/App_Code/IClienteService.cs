@@ -12,6 +12,18 @@ using System.Text;
 public interface IClienteService
 {
 	[OperationContract]
-	List<Clientes> GetAllClientes();	
+	List<Clientes> GetAllClientes();
+
+	[OperationContract]
+	string AddCliente(Clientes cliente);
+
+	[OperationContract]
+	Clientes GetClienteById(int value);
+
+	[OperationContract]
+	string UpdateCliente(Clientes cliente);
+
+	[OperationContract]
+	string DeleteCliente(int value);
 }
 

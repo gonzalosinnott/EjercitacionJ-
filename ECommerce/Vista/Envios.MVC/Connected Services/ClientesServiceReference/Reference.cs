@@ -26,7 +26,7 @@ namespace Vista.MVC.ClientesServiceReference {
         private string FirstNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdField;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LastNameField;
@@ -55,12 +55,12 @@ namespace Vista.MVC.ClientesServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Id {
+        public int Id {
             get {
                 return this.IdField;
             }
             set {
-                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
                 }

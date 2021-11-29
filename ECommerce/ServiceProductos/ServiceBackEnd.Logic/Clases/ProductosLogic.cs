@@ -33,7 +33,6 @@ namespace ServiceBackEnd.Logic
                 productoUpdate.ProductoPrecio = producto.ProductoPrecio;
                 productoUpdate.ProductoImage = producto.ProductoImage;
 
-
                 context.SaveChanges();
             }
             catch (Exception ex)

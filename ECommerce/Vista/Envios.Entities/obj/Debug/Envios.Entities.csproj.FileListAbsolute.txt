@@ -44,3 +44,4 @@ D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\Vista\Envios.Entities\obj\Debug\
 D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\Vista\Envios.Entities\obj\Debug\Envios.Entities.csproj.CopyComplete
 D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\Vista\Envios.Entities\obj\Debug\Envios.Entities.dll
 D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\Vista\Envios.Entities\obj\Debug\Envios.Entities.pdb
+D:\NEORIS\Capacitacion\EjercitacionJ-\ECommerce\Vista\Envios.Entities\obj\Debug\Envios.Entities.csproj.AssemblyReference.cache

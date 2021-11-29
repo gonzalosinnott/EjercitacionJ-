@@ -19,5 +19,49 @@ public class ClienteService : IClienteService
 
         return carrito.ToList();
     }
+
+    public string AddCliente(Clientes cliente)
+    {
+        try
+        {
+            clienteLogic.Add(cliente);
+            return "SUCCESS";
+        }
+        catch (Exception ex)
+        {
+            return ex.ToString();
+        }
+    }
+
+    public Clientes GetClienteById(int value)
+    {
+        return clienteLogic.GetDataById(value);
+    }
+
+    public string UpdateCliente(Clientes cliente)
+    {
+        try
+        {
+            clienteLogic.Update(cliente);
+            return "SUCCESS";
+        }
+        catch (Exception ex)
+        {
+            return ex.ToString();
+        }
+    }
+
+    public string DeleteCliente(int value)
+    {
+        try
+        {
+            clienteLogic.Delete(value);
+            return "SUCCESS";
+        }
+        catch (Exception ex)
+        {
+            return ex.ToString();
+        }
+    }
 }
 
